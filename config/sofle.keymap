@@ -18,7 +18,7 @@
     tapping-term-ms = <150>;
     quick-tap-ms = <50>;
     require-prior-idle-ms = <150>;
-    flavor = "tap-preferred";
+    flavor = "balanced";
 };
 
 / {
@@ -176,10 +176,10 @@
 
         lower_layer {
             bindings = <
-&kp ESCAPE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &mmv MOVE_UP     &kp F6             &kp F7                &kp F8                 &kp F9                &kp F10  &trans
-&trans      &trans  &trans  &trans  &trans  &trans    &mmv MOVE_DOWN   &kp LA(NUMBER_4)   &kp LS(N8)            &kp LS(N9)             &trans                &trans   &trans
-&trans      &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT   &kp LA(N7)         &kp RA(LEFT_BRACKET)  &kp RA(RIGHT_BRACKET)  &kp RS(LEFT_BRACKET)  &trans   &trans
-&trans      &trans  &trans  &trans  &trans  &trans    &mmv MOVE_RIGHT  &kp RA(SEMICOLON)  &kp RA(SINGLE_QUOTE)  &kp RA(BACKSLASH)      &kp RA(COMMA)         &trans   &trans
+&kp ESCAPE  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5    &mmv MOVE_UP     &kp F6             &kp F7                &kp F8                 &kp F9                &kp F10              &trans
+&trans      &trans  &trans  &trans  &trans  &trans    &mmv MOVE_DOWN   &kp LS(NUMBER_4)   &kp LS(N8)            &kp LS(N9)             &trans                &trans               &trans
+&trans      &trans  &trans  &trans  &trans  &trans    &mmv MOVE_LEFT   &kp LS(N7)         &kp RA(LEFT_BRACKET)  &kp RA(RIGHT_BRACKET)  &kp RS(LEFT_BRACKET)  &trans               &trans
+&trans      &trans  &trans  &trans  &trans  &trans    &mmv MOVE_RIGHT  &kp RA(SEMICOLON)  &kp RA(SINGLE_QUOTE)  &kp RA(BACKSLASH)      &kp NON_US_BSLH       &kp LS(NON_US_BSLH)  &trans
 &kp C_MUTE  &trans  &trans  &trans  &trans  &trans    &mkp LCLK        &trans             &trans                &trans                 &trans                &trans
             >;
 
