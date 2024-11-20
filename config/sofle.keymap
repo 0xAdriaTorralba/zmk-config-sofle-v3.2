@@ -163,11 +163,11 @@
 
         default_layer {
             bindings = <
-&service_mode LS(LA(APOSTROPHE)) GRAVE  &kp N1            &kp N2       &kp N3                   &kp N4          &kp N5            &kp UP_ARROW     &kp N6             &kp N7          &kp N8           &kp N9       &generic_tap_hold LS(MINUS) MINUS            &generic_tap_hold EQUAL N0
-&num_tab 4 TAB                          &kp Q             &kp W        &kp E                    &kp R           &cmd_t LG(T) T    &kp DOWN_ARROW   &mt RIGHT_GUI Y    &mt LEFT_GUI U  &mt RIGHT_ALT I  &mt RCTRL O  &mt RIGHT_SHIFT P                            &kp RBKT
-&kp CAPS                                &mt LEFT_SHIFT A  &mt LCTRL S  &mt LEFT_ALT D           &mt LEFT_GUI F  &kp G             &kp LEFT_ARROW   &kp H              &kp J           &kp K            &kp L        &generic_tap_hold LEFT_BRACKET SINGLE_QUOTE  &kp ENTER
-&kp LSHFT                               &kp Z             &kp X        &c_trencada BACKSLASH C  &kp V           &kp B             &kp RIGHT_ARROW  &enya SEMICOLON N  &kp M           &kp COMMA        &kp DOT      &kp FSLH                                     &kp RSHFT
-&kp C_MUTE                              &kp LCTRL         &kp LALT     &kp LGUI                 &kp BSPC        &cmd_space        &kp ENTER        &alt_space         &kp SPACE       &kp RGUI         &kp RALT     &kp RCTRL
+&service_mode LS(LA(APOSTROPHE)) GRAVE  &kp N1            &kp N2       &kp N3                   &kp N4          &kp N5            &kp UP_ARROW     &kp N6             &kp N7           &kp N8           &kp N9       &generic_tap_hold LS(MINUS) MINUS            &generic_tap_hold EQUAL N0
+&num_tab 4 TAB                          &kp Q             &kp W        &kp E                    &kp R           &cmd_t LG(T) T    &kp DOWN_ARROW   &mt LEFT_GUI Y     &mt RIGHT_GUI U  &mt RIGHT_ALT I  &mt RCTRL O  &mt RIGHT_SHIFT P                            &kp RBKT
+&kp CAPS                                &mt LEFT_SHIFT A  &mt LCTRL S  &mt LEFT_ALT D           &mt LEFT_GUI F  &kp G             &kp LEFT_ARROW   &kp H              &kp J            &kp K            &kp L        &generic_tap_hold LEFT_BRACKET SINGLE_QUOTE  &kp ENTER
+&kp LSHFT                               &kp Z             &kp X        &c_trencada BACKSLASH C  &kp V           &kp B             &kp RIGHT_ARROW  &enya SEMICOLON N  &kp M            &kp COMMA        &kp DOT      &kp FSLH                                     &kp RSHFT
+&kp C_MUTE                              &kp LCTRL         &kp LALT     &kp LGUI                 &kp BSPC        &cmd_space        &kp ENTER        &alt_space         &kp SPACE        &kp RGUI         &kp RALT     &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -197,7 +197,7 @@
 &kp C_MUTE  &trans  &trans  &trans  &kp DELETE  &trans    &mkp LCLK        &trans          &trans          &trans        &trans      &trans
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_BRI_INC C_BRI_DEC>;
         };
 
         adjust_layer {
