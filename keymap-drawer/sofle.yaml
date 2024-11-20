@@ -86,7 +86,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
-  - Alt+ 4
+  - Sft+ 4
   - {t: Sft+ 8, s: Sft+ *}
   - {t: Sft+ 9, s: Sft+ (}
   - {t: '$$mdi:transfer$$', type: trans}
@@ -99,7 +99,7 @@ layers:
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-left$$', s: '$$mdi:mouse$$'}
-  - {t: Alt+ 7, s: Alt+ &}
+  - {t: Sft+ 7, s: Sft+ &}
   - {t: 'AGr+ [', s: 'AGr+ {'}
   - {t: 'AGr+ ]', s: 'AGr+ }'}
   - {t: 'Sft+ [', s: 'Sft+ {'}
@@ -115,8 +115,8 @@ layers:
   - {t: AGr+ ;, s: 'AGr+ :'}
   - {t: AGr+ ', s: AGr+ "}
   - {t: AGr+ \, s: AGr+ |}
-  - {t: 'AGr+ ,', s: AGr+ <}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - '|'
+  - Sft+ |
   - {t: '$$mdi:transfer$$', type: trans}
   - $$mdi:volume-off$$
   - {t: '$$mdi:transfer$$', type: trans}
