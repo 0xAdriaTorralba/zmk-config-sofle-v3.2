@@ -134,6 +134,15 @@
         tapping-term-ms = <200>;
     };
 
+    macros {
+        sleep: sleep {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LC(LG(EQUAL)))>;
+            label = "SLEEP";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -181,7 +190,7 @@
             bindings = <
 &kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
 &trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
-&trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
+&trans      &kp TILDE        &trans          &trans           &trans           &tog 5             &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
 &trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
 &kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
             >;
@@ -190,29 +199,30 @@
         };
 
         numeric_layer {
-            display-name = "adjust";
+            display-name = "num";
             bindings = <
-&kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
-&trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
-&trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
-&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
+&trans  &trans   &trans       &trans  &trans  &trans    &mmv MOVE_UP     &trans  &trans  &kp PERCENT  &kp LS(N7)             &trans  &trans
+&trans  &kp TAB  &kp LS(TAB)  &trans  &trans  &trans    &mmv MOVE_DOWN   &kp N7  &kp N8  &kp N9       &kp LS(RIGHT_BRACKET)  &trans  &trans
+&trans  &trans   &sleep       &trans  &trans  &trans    &mmv MOVE_LEFT   &kp N4  &kp N5  &kp N6       &kp SLASH              &trans  &trans
+&trans  &trans   &trans       &trans  &trans  &trans    &mmv MOVE_RIGHT  &kp N1  &kp N2  &kp N3       &kp RIGHT_BRACKET      &trans  &trans
+&trans  &trans   &trans       &trans  &trans  &trans    &mkp LCLK        &trans  &kp N0  &kp DOT      &kp RETURN             &trans
             >;
 
             sensor-bindings = <&scroll_encoder>;
+            label = "num";
         };
 
         game_layer {
-            display-name = "game";
+            display-name = "default";
             bindings = <
-&kp GRAVE   &kp F1           &kp F2          &kp F3           &kp F4           &kp F5             &mmv MOVE_UP     &kp F6           &kp F7           &kp F8      &kp F9     &kp F10           &trans
-&trans      &kp GRAVE        &mkp LCLK       &mkp MCLK        &mkp RCLK        &mkp MB4           &mmv MOVE_DOWN   &kp PG_UP        &kp END          &kp UP      &kp HOME   &kp MINUS         &kp EQUAL
-&trans      &kp TILDE        &trans          &trans           &trans           &mkp MB5           &mmv MOVE_LEFT   &kp PG_DN        &kp LEFT         &kp DOWN    &kp RIGHT  &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-&trans      &rgb_ug RGB_OFF  &rgb_ug RGB_ON  &rgb_ug RGB_EFF  &rgb_ug RGB_EFR  &rgb_ug RGB_SPI    &mmv MOVE_RIGHT  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &kp INSERT  &kp F11    &kp F12           &trans
-&kp C_MUTE  &trans           &trans          &trans           &trans           &trans             &mkp LCLK        &trans           &trans           &trans      &trans     &trans
+&service_mode LS(LA(APOSTROPHE)) GRAVE  &kp N1     &kp N2    &kp N3                   &kp N4    &kp N5        &kp UP_ARROW     &kp N6             &kp N7     &kp N8     &kp N9    &generic_tap_hold LS(MINUS) MINUS            &generic_tap_hold EQUAL N0
+&kp TAB                                 &kp Q      &kp W     &kp E                    &kp R     &kp T         &kp DOWN_ARROW   &kp Y              &kp U      &kp I      &kp O     &kp P                                        &kp RBKT
+&kp CAPS                                &kp A      &kp S     &kp D                    &kp F     &kp G         &kp LEFT_ARROW   &kp H              &kp J      &kp K      &kp L     &generic_tap_hold LEFT_BRACKET SINGLE_QUOTE  &kp ENTER
+&kp LSHFT                               &kp Z      &kp X     &c_trencada BACKSLASH C  &kp V     &kp B         &kp RIGHT_ARROW  &enya SEMICOLON N  &kp M      &kp COMMA  &kp DOT   &kp FSLH                                     &kp RSHFT
+&kp C_MUTE                              &kp LCTRL  &kp LALT  &kp LGUI                 &kp BSPC  &cmd_space    &to 0            &alt_space         &kp SPACE  &kp RGUI   &kp RALT  &kp RCTRL
             >;
 
-            sensor-bindings = <&scroll_encoder>;
+            sensor-bindings = <&inc_dec_kp C_VOL_DN C_VOLUME_UP>;
         };
     };
 
