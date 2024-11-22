@@ -213,11 +213,11 @@
         raise_layer {
             display-name = "raise";
             bindings = <
-&kp GRAVE   &kp F1  &kp F2  &kp F3  &kp F4      &kp F5    &mmv MOVE_UP     &kp F6          &kp F7          &kp F8        &kp F9      &kp F10  &kp F11
-&trans      &trans  &trans  &trans  &trans      &trans    &mmv MOVE_DOWN   &kp PG_UP       &kp END         &kp HOME      &kp HOME    &trans   &kp F12
-&trans      &trans  &trans  &trans  &trans      &trans    &mmv MOVE_LEFT   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT   &trans   &trans
-&trans      &trans  &trans  &trans  &trans      &trans    &mmv MOVE_RIGHT  &previous_page  &kp PAGE_DOWN   &kp PAGE_UP   &next_page  &trans   &trans
-&kp C_MUTE  &trans  &trans  &trans  &kp DELETE  &trans    &mkp LCLK        &trans          &trans          &trans        &trans      &trans
+&kp GRAVE   &kp F1  &kp F2  &kp F3  &kp F4      &kp F5    &kp K         &kp F6          &kp F7          &kp F8        &kp F9      &kp F10  &kp F11
+&trans      &trans  &trans  &trans  &trans      &trans    &kp J         &kp LC(Q)       &kp LC(W)       &kp HOME      &kp HOME    &trans   &kp F12
+&trans      &trans  &trans  &trans  &trans      &trans    &kp UP_ARROW  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT   &trans   &trans
+&trans      &trans  &trans  &trans  &trans      &trans    &kp DOWN      &previous_page  &kp PAGE_DOWN   &kp PAGE_UP   &next_page  &trans   &trans
+&kp C_MUTE  &trans  &trans  &trans  &kp DELETE  &trans    &kp ESC       &trans          &trans          &trans        &trans      &trans
             >;
 
             sensor-bindings = <&inc_dec_kp C_BRI_INC C_BRI_DEC>;
