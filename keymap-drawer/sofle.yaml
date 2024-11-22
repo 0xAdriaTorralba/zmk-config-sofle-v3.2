@@ -56,7 +56,7 @@ layers:
   - $$mdi:volume-off$$
   - $$mdi:apple-keyboard-control$$
   - $$mdi:apple-keyboard-option$$
-  - LGUI
+  - '&ctrl_q'
   - {t: '$$mdi:backspace$$', type: backspace}
   - '&cmd_space'
   - {t: '$$mdi:keyboard-return$$', type: enter}
@@ -279,7 +279,7 @@ layers:
   - $$mdi:keyboard-tab-reverse$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - LOCK
+  - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
