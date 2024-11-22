@@ -133,6 +133,31 @@
         tapping-term-ms = <200>;
     };
 
+    lhmod: lhmod {
+        compatible = "zmk,behavior-hold-tap";
+        label = "LHMOD";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        require-prior-idle-ms = <175>;
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <26 40 39 41 42 0 1 11 13 14 15 16 17 18 19 20 21 22 23 24 26 31 32 33 34 35 36 37 39 40 41 42 43 44 45 46 47 48 49 50 52 53 54 55 56 57 58 59 60 61 62 63 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 58 61 62 63 30>;
+        quick-tap-ms = <50>;
+    };
+
+    rhmod: rhmod {
+        compatible = "zmk,behavior-hold-tap";
+        label = "RHMOD";
+        bindings = <&kp>, <&kp>;
+
+        #binding-cells = <2>;
+        tapping-term-ms = <200>;
+        require-prior-idle-ms = <175>;
+        flavor = "tap-preferred";
+        hold-trigger-key-positions = <0 0 1 11 12 13 14 15 16 17 18 19 25 26 27 28 29 30 31 32 33 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 25 26 27 28 29 30 31 32 33 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 58 34 35 36 37>;
+    };
+
     macros {
         sleep: sleep {
             compatible = "zmk,behavior-macro";
@@ -161,11 +186,11 @@
 
         default_layer {
             bindings = <
-&service_mode LS(LA(APOSTROPHE)) GRAVE  &kp N1            &kp N2       &kp N3                   &kp N4          &kp N5            &kp UP_ARROW     &kp N6             &kp N7           &kp N8           &kp N9       &generic_tap_hold LS(MINUS) MINUS            &generic_tap_hold EQUAL N0
-&num_tab 4 TAB                          &kp Q             &kp W        &kp E                    &kp R           &cmd_t LG(T) T    &kp DOWN_ARROW   &mt LEFT_GUI Y     &mt RIGHT_GUI U  &mt RIGHT_ALT I  &mt RCTRL O  &mt RIGHT_SHIFT P                            &kp RBKT
-&kp CAPS                                &mt LEFT_SHIFT A  &mt LCTRL S  &mt LEFT_ALT D           &mt LEFT_GUI F  &kp G             &kp LEFT_ARROW   &kp H              &kp J            &kp K            &kp L        &generic_tap_hold LEFT_BRACKET SINGLE_QUOTE  &kp ENTER
-&kp LSHFT                               &kp Z             &kp X        &c_trencada BACKSLASH C  &kp V           &kp B             &kp RIGHT_ARROW  &enya SEMICOLON N  &kp M            &kp COMMA        &kp DOT      &kp FSLH                                     &kp RSHFT
-&kp C_MUTE                              &kp LCTRL         &kp LALT     &kp LGUI                 &kp BSPC        &cmd_space        &kp ENTER        &alt_space         &kp SPACE        &kp RGUI         &kp RALT     &kp RCTRL
+&service_mode LS(LA(APOSTROPHE)) GRAVE  &kp N1               &kp N2          &kp N3                   &kp N4             &kp N5            &kp UP_ARROW     &kp N6             &kp N7              &kp N8              &kp N9          &generic_tap_hold LS(MINUS) MINUS            &generic_tap_hold EQUAL N0
+&num_tab 4 TAB                          &kp Q                &kp W           &kp E                    &kp R              &cmd_t LG(T) T    &kp DOWN_ARROW   &rhmod LEFT_GUI Y  &rhmod RIGHT_GUI U  &rhmod RIGHT_ALT I  &rhmod RCTRL O  &rhmod RIGHT_SHIFT P                         &kp RBKT
+&kp CAPS                                &lhmod LEFT_SHIFT A  &lhmod LCTRL S  &lhmod LEFT_ALT D        &lhmod LEFT_GUI F  &kp G             &kp LEFT_ARROW   &kp H              &kp J               &kp K               &kp L           &generic_tap_hold LEFT_BRACKET SINGLE_QUOTE  &kp ENTER
+&kp LSHFT                               &kp Z                &kp X           &c_trencada BACKSLASH C  &kp V              &kp B             &kp RIGHT_ARROW  &enya SEMICOLON N  &kp M               &kp COMMA           &kp DOT         &kp FSLH                                     &kp RSHFT
+&kp C_MUTE                              &kp LCTRL            &kp LALT        &kp LGUI                 &kp BSPC           &cmd_space        &kp ENTER        &alt_space         &kp SPACE           &kp RGUI            &kp RALT        &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
