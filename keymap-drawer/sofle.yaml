@@ -279,7 +279,7 @@ layers:
   - $$mdi:keyboard-tab-reverse$$
   - {t: '$$mdi:transfer$$', type: trans}
   - {t: '$$mdi:transfer$$', type: trans}
-  - {t: '$$mdi:transfer$$', type: trans}
+  - LOCK
   - {t: '$$mdi:menu-down$$', s: '$$mdi:mouse$$'}
   - {t: '7', s: '&'}
   - {t: '8', s: '*'}
