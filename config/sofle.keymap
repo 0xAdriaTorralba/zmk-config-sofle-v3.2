@@ -158,6 +158,15 @@
         hold-trigger-key-positions = <0 0 1 11 12 13 14 15 16 17 18 19 25 26 27 28 29 30 31 32 33 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 25 26 27 28 29 30 31 32 33 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 58 34 35 36 37>;
     };
 
+    ctrl_q: ctrl_q {
+        compatible = "zmk,behavior-tap-dance";
+        label = "CTRL_Q";
+        #binding-cells = <0>;
+        bindings = <&mo 1>, <&kp LC(Q)>;
+
+        tapping-term-ms = <200>;
+    };
+
     macros {
         sleep: sleep {
             compatible = "zmk,behavior-macro";
@@ -190,7 +199,7 @@
 &num_tab 4 TAB                          &kp Q                &kp W           &kp E                    &kp R              &cmd_t LG(T) T        &kp DOWN_ARROW   &rhmod LEFT_GUI Y  &rhmod RIGHT_GUI U  &rhmod RIGHT_ALT I  &rhmod RCTRL O  &rhmod RIGHT_SHIFT P                         &kp RBKT
 &kp CAPS                                &lhmod LEFT_SHIFT A  &lhmod LCTRL S  &lhmod LEFT_ALT D        &lhmod LEFT_GUI F  &lhmod RIGHT_GUI G    &kp LEFT_ARROW   &kp H              &kp J               &kp K               &kp L           &generic_tap_hold LEFT_BRACKET SINGLE_QUOTE  &kp ENTER
 &kp LSHFT                               &kp Z                &kp X           &c_trencada BACKSLASH C  &kp V              &kp B                 &kp RIGHT_ARROW  &enya SEMICOLON N  &kp M               &kp COMMA           &kp DOT         &kp FSLH                                     &kp RSHFT
-&kp C_MUTE                              &kp LCTRL            &kp LALT        &kp LGUI                 &kp BSPC           &cmd_space            &kp ENTER        &alt_space         &kp SPACE           &kp RGUI            &kp RALT        &kp RCTRL
+&kp C_MUTE                              &kp LCTRL            &kp LALT        &ctrl_q                  &kp BSPC           &cmd_space            &kp ENTER        &alt_space         &kp SPACE           &kp RGUI            &kp RALT        &kp RCTRL
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>;
@@ -240,7 +249,7 @@
             display-name = "num";
             bindings = <
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &mmv MOVE_UP     &trans  &trans  &kp PERCENT  &kp LS(N7)             &trans  &trans
-&trans      &kp TAB       &kp LS(TAB)   &trans        &trans        &kp K_LOCK      &mmv MOVE_DOWN   &kp N7  &kp N8  &kp N9       &kp LS(RIGHT_BRACKET)  &trans  &trans
+&trans      &kp TAB       &kp LS(TAB)   &trans        &trans        &trans          &mmv MOVE_DOWN   &kp N7  &kp N8  &kp N9       &kp LS(RIGHT_BRACKET)  &trans  &trans
 &trans      &trans        &sleep        &trans        &trans        &trans          &mmv MOVE_LEFT   &kp N4  &kp N5  &kp N6       &kp SLASH              &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans          &mmv MOVE_RIGHT  &kp N1  &kp N2  &kp N3       &kp RIGHT_BRACKET      &trans  &trans
 &trans      &trans        &trans        &trans        &trans        &trans          &mkp LCLK        &trans  &kp N0  &kp DOT      &kp RETURN             &trans
