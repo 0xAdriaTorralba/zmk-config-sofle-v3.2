@@ -326,7 +326,7 @@ layers:
   - RETURN
   - {t: '$$mdi:transfer$$', type: trans}
   game:
-  - {t: '`', h: Sft+Alt+ <, s: '~'}
+  - {t: '`', s: '~'}
   - {t: '1', s: '!'}
   - {t: '2', s: '@'}
   - {t: '3', s: '#'}
@@ -363,7 +363,7 @@ layers:
   - J
   - K
   - L
-  - {t: '''', h: '[', s: '"'}
+  - {t: \, s: '|'}
   - {t: '$$mdi:keyboard-return$$', type: enter}
   - $$mdi:apple-keyboard-shift$$
   - Z
